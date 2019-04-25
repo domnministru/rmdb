@@ -6,11 +6,16 @@ import {
 
 const initialState = {
     show: {
+        poster_path: null,
+        backdrop_path: null,
         genres: [],
-        content: [],
+        languages: [],
+        origin_country: [],
         production_companies: [],
-        production_countries: [],
-        poster_path: '',
+        created_by: [],
+        seasons: [],
+        episode_run_time: [],
+        networks: [],
     },
     loading: false,
     error: null
@@ -37,7 +42,6 @@ const getShowReducer = (state = initialState, action) => {
                 ...state,
                 loading: false,
                 error: action.error,
-                show: {}
             };
 
         default:

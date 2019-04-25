@@ -3,9 +3,9 @@ import {connect} from "react-redux";
 import {getSpecificMovie} from "./modules/getMovieAction";
 
 import MyLoader from "../../components/MyLoader";
-import DetailsUpperBody from "../../components/DetailsUpperBody";
-import DetailsBody from "../../components/DetailsBody";
-import DetailsHeader from "../../components/DetailsHeader";
+import Cast from "../../components/main/ActorsList";
+import Body from "../../components/main/Body";
+import Presentation from "../../components/main/Presentation";
 
 import "../../styles/components/_details.scss";
 
@@ -15,7 +15,7 @@ class MovieDetails extends Component {
     }
 
     render() {
-        const {error, loading, movie} = this.props;
+        const {error, loading, movie, match} = this.props;
         if (error) {console.log(error)}
         if (loading) {return <MyLoader/>}
 
@@ -24,18 +24,31 @@ class MovieDetails extends Component {
             ...rest
         } = movie;
 
+        const content_type = "movie";
+
         return (
             <div className="details" key={id}>
-                <DetailsHeader
+                <Presentation
+                    id={id}
                     title={title}
                     release={release_date}
                     rating={vote_average}
-                    {...rest}/>
-                <DetailsUpperBody
-                    {...rest}/>
-                <DetailsBody
+                    {...rest}
+                />
+                <Cast
+                    id={match.params.id}
+                    content_type={content_type}
+                    {...rest}
+                />
+                <Body
+                    id={id}
+                    title={title}
+                    release={release_date}
+                    rating={vote_average}
                     original_title={original_title}
-                    {...rest}/>
+                    content_type={content_type}
+                    {...rest}
+                />
             </div>
         )
     }
@@ -45,7 +58,6 @@ const mapStateToProps = state => ({
     movie: state.movie.movie,
     loading: state.movie.loading,
     error: state.movie.error,
-
 });
 
 const mapDispatchToProps = {

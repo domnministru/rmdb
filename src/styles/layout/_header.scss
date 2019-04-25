@@ -1,0 +1,90 @@
+@import "../utils/variables";
+.menu_container {
+  display: flex!important;
+  justify-content: space-between!important;
+  align-items: center!important;
+  flex-flow: row nowrap!important;
+  height: 100%!important;
+}
+
+.app_header {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  width: 100%;
+  height: 120px;
+  background-color: $denim;
+}
+
+.menu {
+  display: flex;
+  height: 80px;
+  width: 100%;
+}
+
+.nav_bar {
+  display: flex;
+  height: 100%;
+  width: 50%;
+}
+
+.nav_auth {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100%;
+  width: 20%;
+}
+
+ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.25em;
+  height: 100%;
+  width: 100px;
+
+  & a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-weight: bold;
+    line-height: 20px;
+    color: white;
+    transition: 250ms;
+    height: 100%;
+    width: 100%;
+  }
+
+  & a:hover {
+    height: 100%;
+    color: $denim;
+    background-color: darken(white,10%);
+    transition: 250ms;
+  }
+}
+
+.branding {
+  background-color: white!important;
+  outline: 2px solid $denim;
+  outline-offset: -10px;
+
+  & a:hover {
+    background-color: white;
+    transition: 250ms;
+  }
+}
+

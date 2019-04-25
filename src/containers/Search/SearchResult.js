@@ -1,64 +1,41 @@
-import React from "react";
-import {DEFAULT_IMG_URL} from "../../const";
-import {SMALL_IMG} from "../../const";
-import {Image} from "semantic-ui-react";
+import React, {Component} from "react";
+import {connect} from 'react-redux';
+import {searchAll, setSearchResultsVisibility} from './modules/searchAction';
+import Suggestion from "./Suggestion";
 import "../../styles/layout/_search.scss"
+import OutsideClickHandler from 'react-outside-click-handler';
 
-const SearchResult = (props) => {
+class SearchResult extends Component {
 
-    let title = null;
-    let release = null;
-    let type = null;
 
-    let imageLink = DEFAULT_IMG_URL + SMALL_IMG + props.path;
+    render() {
+        const {result, setSearchResultsVisibility} = this.props;
+        return (
+            <OutsideClickHandler onOutsideClick={() =>setSearchResultsVisibility(false)}>
+                <div className="results_area" >
+                    {
+                        result.map(suggestion => {
+                            return (
+                                <Suggestion
+                                    key={suggestion.id}
+                                    title={suggestion.title}
+                                    name={suggestion.name}
+                                    release={suggestion.release_date}
+                                    type={suggestion.media_type}
+                                    path={suggestion.poster_path}
+                                />
+                            )
+                        })
+                    }
+                </div>
+            </OutsideClickHandler>
 
-    switch (props.media_type) {
-        case "movie": {
-            type = "Movie";
-            break;
-        }
-        case "tv": {
-            type = "TV";
-            break;
-        }
-        case "person": {
-            type = "Person";
-            break;
-        }
-        default: {
-            type = "TBD";
-            break;
-        }
+        );
     }
-    console.log("props:" , props);
+}
 
-    props.title === undefined ?
-        (title = "N/A"):
-        (title = props.title);
-
-    props.release_date === undefined ?
-        (release = "N/A"):
-        (release = props.release_date);
-
-
-    return (
-        <div className="suggestion-body">
-            <Image className="suggestion-image"
-                   src={imageLink}>
-            </Image>
-            <div className="suggestion-info">
-                <div className="suggestion-title">
-                    <h2>{title}</h2>
-                </div>
-                <div className="suggestion-year">
-                    <h4>{release}</h4>
-                </div>
-            </div>
-            <div className="suggestion-type">
-                {type}
-            </div>
-        </div>
-    );
+const mapDispatchToProps = {
+    setSearchResultsVisibility,
 };
 
-export default SearchResult;
+export default connect(null, mapDispatchToProps)(SearchResult);

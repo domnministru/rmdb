@@ -1,14 +1,15 @@
 import {
     SEARCH_ALL_BEGIN,
     SEARCH_ALL_SUCCESS,
-    SEARCH_ALL_FAILURE
+    SEARCH_ALL_FAILURE, SET_SEARCH_RESULTS_VISIBILITY
 } from "./searchAction";
 
 const initialState = {
     suggestions: [],
     loading: false,
-    error: null
-    //showsuugestions true/false
+    error: null,
+    isSearchResultsVisible: false,
+    //suggestions true/false
 };
 
 const searchReducer = (state = initialState, action) => {
@@ -32,7 +33,11 @@ const searchReducer = (state = initialState, action) => {
                 ...state,
                 loading: false,
                 error: action.error,
-                suggestions: []
+            };
+        case SET_SEARCH_RESULTS_VISIBILITY:
+            return {
+                ...state,
+                isSearchResultsVisible: action.isSearchResultsVisible,
             };
 
         default:

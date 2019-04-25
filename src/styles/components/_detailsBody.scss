@@ -7,16 +7,16 @@
 
   & .b_info {
     display: flex;
-    width: 300px;
+    width: 30%;
     flex-flow: column;
     border-radius: 5px;
-    background-color: $light-grey;
+    background-color: $white_wash;
   }
 
   & .i_entertainment {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 70%;
 
     & .e_videos {
       display: flex;

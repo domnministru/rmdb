@@ -1,9 +1,7 @@
+@import "../utils/variables";
+
 footer {
   display: flex;
   color: white;
-  background-color: #1a1b1c;
-}
-
-.app-footer {
-
+  background-color: $gunmetal;
 }

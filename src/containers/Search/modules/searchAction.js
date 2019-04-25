@@ -6,6 +6,7 @@ import {DEFAULT_URL} from "../../../const";
 export const SEARCH_ALL_BEGIN = 'SEARCH_ALL_BEGIN';
 export const SEARCH_ALL_SUCCESS = 'SEARCH_ALL_SUCCESS';
 export const SEARCH_ALL_FAILURE = 'SEARCH_ALL_FAILURE';
+export const SET_SEARCH_RESULTS_VISIBILITY = 'SET_SEARCH_RESULTS_VISIBILITY';
 
 export const searchAllBegin = () => ({
     type: SEARCH_ALL_BEGIN
@@ -19,6 +20,11 @@ export const searchAllSuccess = suggestions => ({
 export const searchAllFailure = error => ({
     type: SEARCH_ALL_FAILURE,
     error
+});
+
+export const setSearchResultsVisibility = isSearchResultsVisible => ({
+    type: SET_SEARCH_RESULTS_VISIBILITY,
+    isSearchResultsVisible
 });
 
 export const searchAll = (query) => {

@@ -6,10 +6,12 @@ import {
 
 const initialState = {
     movie: {
+        poster_path: null,
+        backdrop_path: null,
         genres: [],
         production_companies: [],
         production_countries: [],
-        poster_path: '',
+        spoken_languages: [],
     },
     loading: false,
     error: null
@@ -36,7 +38,6 @@ const getMovieReducer = (state = initialState, action) => {
                 ...state,
                 loading: false,
                 error: action.error,
-                movie: {}
             };
 
         default:

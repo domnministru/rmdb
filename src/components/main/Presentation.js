@@ -1,15 +1,15 @@
 import React from "react";
 import {Container, Image} from "semantic-ui-react";
-import {BIG_IMG, DEFAULT_IMG_URL} from "../const";
-import RateBtn from "./buttons/RateBtn";
-import LikeBtn from "./buttons/LikeBtn";
-import AddBtn from "./buttons/AddBtn";
-import CrewMember from "./CrewMember";
-import "../styles/components/_detailsHeader.scss";
+import {BIG_IMG, DEFAULT_IMG_URL} from "../../const";
+import RateBtn from "../buttons/RateBtn";
+import LikeBtn from "../buttons/LikeBtn";
+import AddBtn from "../buttons/AddBtn";
+import CrewMember from "../CrewMember";
+import "../../styles/components/_detailsHeader.scss";
 
-const DetailsHeader = props => {
+const Presentation = props => {
     const {
-        title, release, overview, poster_path, rating
+        title, release, overview, poster_path,
     } = props;
 
     let poster = DEFAULT_IMG_URL + BIG_IMG + poster_path;
@@ -50,4 +50,4 @@ const DetailsHeader = props => {
     )
 };
 
-export default DetailsHeader;
+export default Presentation;

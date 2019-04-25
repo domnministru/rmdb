@@ -1,8 +1,8 @@
 import React, {Component} from "react";
 import {connect} from "react-redux";
-import DetailsHeader from "../../components/DetailsHeader";
-import DetailsUpperBody from "../../components/DetailsUpperBody";
-import DetailsBody from "../../components/DetailsBody";
+import Presentation from "../../components/main/Presentation";
+import Cast from "../../components/main/ActorsList";
+import Body from "../../components/main/Body";
 import {getSpecificShow} from "./modules/getShowAction";
 import MyLoader from "../../components/MyLoader";
 
@@ -14,7 +14,7 @@ class TvDetails extends Component {
     }
 
     render() {
-        const {error, loading, show} = this.props;
+        const {error, loading, show, match} = this.props;
         if (error) {console.log(error)}
         if (loading) {return <MyLoader/>}
 
@@ -23,20 +23,29 @@ class TvDetails extends Component {
             ...rest
         } = show;
 
+        const content_type = "tv";
 
         return(
             <div className="details" key={id}>
-                <DetailsHeader
+                <Presentation
+                    id={id}
                     title={name}
                     release={first_air_date}
                     rating={vote_average}
                     {...rest}
                 />
-                <DetailsUpperBody
-                    {...rest}
+                <Cast
+                    id={match.params.id}
+                    content_type={content_type}
+                    {...rest}/>
                 />
-                <DetailsBody
+                <Body
+                    id={id}
+                    title={name}
+                    release={first_air_date}
+                    rating={vote_average}
                     original_title={original_name}
+                    content_type={content_type}
                     {...rest}
                 />
             </div>
@@ -46,8 +55,8 @@ class TvDetails extends Component {
 
 const mapStateToProps = state => ({
     show: state.show.show,
-    s_loading: state.show.loading,
-    s_error: state.show.error,
+    loading: state.show.loading,
+    error: state.show.error,
 
 });
 
