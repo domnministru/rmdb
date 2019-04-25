@@ -1,0 +1,18 @@
+.details_upper-body {
+  display: flex;
+  width: 100%;
+  padding: 20px 0;
+
+  & .details_cast {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    & .details_actor-card {
+      display: flex;
+      height: 200px;
+      width: 140px;
+      border: 1px solid black;
+    }
+  }
+}

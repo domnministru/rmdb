@@ -1,0 +1,84 @@
+.top-content {
+  width: 100%;
+  margin-top: 25px;
+  height: 710px;
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row wrap;
+  position: relative;
+}
+
+.movieOne {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  width: 480px;
+  height: 490px;
+  background: {
+    image: url(../../images/movie-1.jpg);
+    position: top center;
+    repeat: no-repeat;
+    size: cover;
+  }
+}
+
+.movieTwo {
+  position: absolute;
+  top: 220px;
+  left: 500px;
+  overflow: hidden;
+  width: 300px;
+  height: 270px;
+  background: {
+    image: url(../../images/movie-2.jpg);
+    position: top center;
+    repeat: no-repeat;
+    size: cover;
+  }
+}
+
+.showOne {
+  position: absolute;
+  top: 0;
+  right: 0;
+  overflow: hidden;
+  width: 627px;
+  height: 200px;
+  background: {
+    image: url(../../images/show-1.jpg);
+    position: top center;
+    repeat: no-repeat;
+    size: cover;
+  }
+}
+
+.showTwo {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  overflow: hidden;
+  width: 305px;
+  height: 490px;
+  background: {
+    image: url(../../images/show-2.jpg);
+    position: top center;
+    repeat: no-repeat;
+    size: cover;
+  }
+}
+
+.people {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  width: 800px;
+  height: 200px;
+  background: {
+    image: url(../../images/people.jpg);
+    position: top center;
+    repeat: no-repeat;
+    size: cover;
+  }
+}

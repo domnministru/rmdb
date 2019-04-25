@@ -1,0 +1,166 @@
+.person_details_header {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  width: 100%;
+  height: 500px;
+  background-color: darken(#fff, 10%);
+
+  & .header_picture {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    max-width: 300px;
+    min-width: 300px;
+  }
+
+  & .info {
+    display: flex;
+    justify-content: flex-start;
+    flex-flow: column;
+    width: 70%;
+    font-size: 1.15em;
+    margin-top: -5%;
+
+    & .name-n-social {
+      display: flex;
+
+      & .name {
+        display: flex;
+      }
+
+      & .social {
+        display: flex;
+        padding: 0 20px;
+      }
+    }
+
+    & .bio {
+      display: flex;
+      flex-direction: column;
+      padding: 20px 0;
+    }
+  }
+}
+
+.person_details_body {
+  display: flex;
+  flex-flow: row nowrap;
+  width: 100%;
+  height: auto;
+  padding: 20px 0;
+
+  & .detailed_info {
+    display: flex;
+    width: 300px;
+    height: 900px;
+    flex-flow: column;
+    border-radius: 5px;
+    background-color: darken(#fff, 10%);
+  }
+
+  & .acting_info {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0 20px;
+
+    & .known_for {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: auto;
+
+      & .movies {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+
+        & .movie {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 200px;
+          width: 120px;
+          border: 1px solid black;
+        }
+      }
+    }
+
+    & .acting {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: auto;
+
+      & .acting_list {
+        display: flex;
+        flex-direction: column;
+
+        & .acting_option {
+          display: inline-flex;
+          height: 50px;
+          width: 100%;
+          border: 1px solid black;
+        }
+      }
+    }
+  }
+}
+
+.actor-card {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-flow: column nowrap;
+  height: 423px;
+  width: 240px;
+  margin-top: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+
+  & .actor-card_image {
+    width: 240px;
+    height: 360px;
+  }
+
+  & .actor-card_content {
+    width: 100%;
+    padding: 5px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-flow: column wrap;
+
+    & .actor-card_name {
+      display: flex;
+      width: 100%;
+      padding: 5px;
+
+      & a {
+        color: #1a1b1c;
+      }
+
+      & a:hover {
+        text-decoration: underline;
+        -webkit-transform: scale(1.1);
+        transition: 250ms;
+      }
+    }
+
+    & .actor-card_info {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      padding: 5px;
+      width: 100%;
+      line-height: 1.2em;
+      margin: 0;
+    }
+  }
+}
+
+
+
+
+

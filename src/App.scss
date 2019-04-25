@@ -1,0 +1,47 @@
+@import "./styles/utils/variables";
+
+#root { //setting sticky footer
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  & header {
+    display: flex;
+    background-color: $darker-blue;
+    color: $light-grey;
+  }
+
+  & main {
+    display: flex;
+    flex: auto;
+    background-color: $light-grey;
+  }
+
+  & footer {
+    display: flex;
+    flex-shrink: 0;
+    background-color: $darker-blue;
+    color: $light-grey;
+  }
+}
+
+
+.primary-container {
+   display: flex!important;
+   justify-content: space-between!important;
+   align-items: center!important;
+   flex-flow: row wrap!important;
+   height: auto!important;
+ }
+
+.ui .segment {
+  position: relative;
+  background: #fff;
+  -webkit-box-shadow: none!important;
+  box-shadow: none!important;
+  margin: 0!important;
+  padding: 0!important;
+  border-radius: 0!important;
+  border: none!important;
+  flex-shrink: 0!important;
+}
