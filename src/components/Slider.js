@@ -1,23 +1,19 @@
 import React, {Component} from "react";
-import { tns } from 'tiny-slider/src/tiny-slider.module';
-import 'tiny-slider/src/tiny-slider.scss';
+
+import { tns } from "tiny-slider/src/tiny-slider.module";
+
+import "tiny-slider/src/tiny-slider.scss";
 
 class Slider extends Component {
     componentDidMount() {
-        console.log(this.carousel);
         this.slider = tns({
             container: this.carousel,
-            items: 5,
-            controls: false,
-            nav: false,
-            gutter: 15,
-            mouseDrag: true,
-            arrowKeys: true,
-            autoplay: true,
-            autoplayButton: false,
-            autoplayButtonOutput: false,
-            autoplayHoverPause: true,
-
+            items: this.props.items,
+            controls: "#customize-controls",
+            nav: this.props.nav,
+            mouseDrag: this.props.mouseDrag,
+            arrowKeys: this.props.arrowKeys,
+            controlsText: ['<span class="fas fa-chevron-left" />', '<span class="fas fa-chevron-right" />']
         })
     }
 

@@ -1,12 +1,13 @@
 import  React, {Component} from "react";
 import {connect} from "react-redux";
 import Proptypes from "prop-types";
-import {getPopularPeople} from "./modules/peopleAction";
-import PersonCard from "./PersonCard";
-import MyLoader from "../../components/MyLoader";
-import {Container} from "semantic-ui-react";
 
-import "../../styles/pages/_people.scss"
+import {getPopularPeople} from "./modules/peopleAction";
+
+import PeopleCard from "./PeopleCard";
+import {Container} from "semantic-ui-react";
+import Spinner from "../../components/Spinner";
+import "../../styles/pages/_people.scss";
 
 class PeopleList extends Component {
     componentDidMount() {
@@ -15,14 +16,13 @@ class PeopleList extends Component {
 
     render() {
         const {error, loading, people} = this.props;
-        if (error) {console.log(error)}
-        if (loading) {return <MyLoader/>}
-
+        if (error) console.log(error);
+        if (loading) return <Spinner/>;
         return(
             <Container className="primary-container">
                 {people.map(card => {
                     return (
-                        <PersonCard
+                        <PeopleCard
                             key={card.id}
                             name={card.name}
                             id={card.id}

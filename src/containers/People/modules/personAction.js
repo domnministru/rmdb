@@ -10,9 +10,9 @@ export const getSpecificPersonBegin = () => ({
     type: GET_SPECIFIC_PERSON_BEGIN
 });
 
-export const getSpecificPersonSuccess = payload => ({
+export const getSpecificPersonSuccess = person => ({
     type: GET_SPECIFIC_PERSON_SUCCESS,
-    payload
+    person
 });
 
 export const getSpecificPersonFailure = error => ({

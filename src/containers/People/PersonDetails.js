@@ -1,60 +1,45 @@
-import React, {Component} from 'react';
-import {connect} from "react-redux";
-import {getSpecificPerson} from "./modules/personAction";
-import MyLoader from "../../components/MyLoader";
-import {DEFAULT_IMG_URL, MEDIUM_IMG} from "../../const";
-import Proptypes from 'prop-types';
-import PersonDetailsHeader from "./PersonDetailsHeader";
-import PersonDetailsBody from "./PersonDetailsBody";
+import React from "react";
 
-import "../../styles/components/_details.scss"
-import "../../styles/pages/_people.scss"
+import SingleBox from "../../components/SingleBox";
+import AlsoKnownBox from "./AlsoKnownBox";
 
-class PersonDetails extends Component {
-    componentDidMount() {
-        this.props.getSpecificPerson(this.props.match.params.id);
-    }
+import "../../styles/pages/_people.scss";
 
-    render() {
-        const {error, loading, person} = this.props;
-        if (error) {console.log(error)}
-        if (loading) {return <MyLoader/>}
 
-        const {id, name, biography, birthday, profile_path} = person;
+const DetailedActorInfo = props => {
+    const {
+        name, also_known_as, birthday, deathday, gender, homepage,
+        known_for_department, place_of_birth, popularity
+    } = props;
 
-        let pic = DEFAULT_IMG_URL + MEDIUM_IMG + profile_path;
-
-        return(
-            <div className="details" key={id}>
-                <PersonDetailsHeader
-                    name={name}
-                    biography={biography}
-                    birthday={birthday}
-                    pic={pic}
-                />
-                <PersonDetailsBody/>
-            </div>
-        )
-    }
-}
-
-PersonDetails.propTypes = {
-    id: Proptypes.number,
-    name: Proptypes.string,
-    biography: Proptypes.string,
-    birthday: Proptypes.string,
-    profile_path: Proptypes.string,
+    return(
+        <div className="pp-details">
+            <h1 className="heading-text">Personal Info</h1>
+            <SingleBox name={"Name: "} content={name}/>
+            {
+                deathday === null ?
+                    (<SingleBox name={"Birthday: "} content={birthday}/>) :
+                    (<div>
+                        <SingleBox name={"Birthday: "} content={birthday}/>
+                        <SingleBox name={"Deathday: "} content={deathday}/>
+                    </div>)
+            }
+            {
+                gender === 2 ?
+                    (<SingleBox name={"Gender: "} content={"male"}/>) :
+                    (<SingleBox name={"Gender: "} content={"female"}/>)
+            }
+            {
+                homepage === null ?
+                    (<SingleBox name={"Homepage: "} content={"-"}/>) :
+                    (<SingleBox name={"Homepage: "} content={homepage}/>)
+            }
+            <SingleBox name={"Known for department: "} content={known_for_department}/>
+            <SingleBox name={"Place of birth: "} content={place_of_birth}/>
+            <SingleBox name={"Popularity: "} content={popularity}/>
+            <AlsoKnownBox also_known_as={also_known_as}/>
+        </div>
+    )
 };
 
-
-const mapStateToProps = state => ({
-    person: state.person.payload,
-    loading: state.person.loading,
-    error: state.person.error
-});
-
-const mapDispatchToProps = {
-    getSpecificPerson,
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(PersonDetails);
+export default DetailedActorInfo;

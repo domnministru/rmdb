@@ -5,7 +5,9 @@ import {
 } from "./personAction";
 
 const initialState = {
-    payload: [],
+    person: {
+        also_known_as: [],
+    },
     loading: false,
     error: null
 };
@@ -23,7 +25,7 @@ const personReducer = (state = initialState, action) => {
             return {
                 ...state,
                 loading: false,
-                payload: action.payload
+                person: action.person
             };
 
         case GET_SPECIFIC_PERSON_FAILURE:
@@ -31,7 +33,6 @@ const personReducer = (state = initialState, action) => {
                 ...state,
                 loading: false,
                 error: action.error,
-                payload: []
             };
 
         default:

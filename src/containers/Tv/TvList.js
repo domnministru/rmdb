@@ -1,9 +1,12 @@
 import  React, {Component} from 'react';
 import {Container} from "semantic-ui-react";
 import {connect} from "react-redux";
-import ItemCard from "../../components/ItemCard";
+
 import {getPopularShows} from "./modules/getShowsAction";
-import MyLoader from "../../components/MyLoader";
+
+import ItemCard from "../../components/ItemCard";
+import Spinner from "../../components/Spinner";
+import TvFilter from "../../components/TvFilter";
 
 class TvList extends Component {
     componentDidMount() {
@@ -12,13 +15,13 @@ class TvList extends Component {
 
     render() {
         const {error, loading, shows} = this.props;
-        if (error) {console.log(error)}
-        if (loading) {return <MyLoader active/>}
+        if (error) console.log(error);
+        if (loading) return <Spinner/>;
 
         return(
             <Container className="primary-container">
+                <TvFilter/>
                 {shows.map(show => {
-                    console.log(show);
                         return (
                             <ItemCard
                                 key={show.id}
@@ -32,7 +35,6 @@ class TvList extends Component {
                             />
                         )
                     }
-
                 )}
             </Container>
         )

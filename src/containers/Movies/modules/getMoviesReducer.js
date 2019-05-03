@@ -1,7 +1,7 @@
 import {
-    GET_POPULAR_MOVIES_BEGIN,
-    GET_POPULAR_MOVIES_SUCCESS,
-    GET_POPULAR_MOVIES_FAILURE
+    GET_MOVIES_BEGIN,
+    GET_MOVIES_SUCCESS,
+    GET_MOVIES_FAILURE
 } from "./getMoviesAction";
 
 const initialState = {
@@ -12,21 +12,21 @@ const initialState = {
 
 const getMoviesReducer = (state = initialState, action) => {
     switch(action.type) {
-        case GET_POPULAR_MOVIES_BEGIN:
+        case GET_MOVIES_BEGIN:
             return {
                 ...state,
                 loading: true,
                 error: null
             };
 
-        case GET_POPULAR_MOVIES_SUCCESS:
+        case GET_MOVIES_SUCCESS:
             return {
                 ...state,
                 loading: false,
                 data: action.data
             };
 
-        case GET_POPULAR_MOVIES_FAILURE:
+        case GET_MOVIES_FAILURE:
             return {
                 ...state,
                 loading: false,

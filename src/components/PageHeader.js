@@ -1,7 +1,7 @@
 import React, {Component} from "react";
+
 import Menu from "./Menu";
 import Search from "../containers/Search/Search";
-
 import "../styles/layout/_header.scss"
 
 class PageHeader extends Component {

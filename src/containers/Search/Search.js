@@ -1,15 +1,15 @@
 import React, {Component} from 'react';
 import {Container, Icon} from 'semantic-ui-react';
 import {connect} from 'react-redux';
+
 import {searchAll, setSearchResultsVisibility} from './modules/searchAction';
+
 import SearchResult from './SearchResult';
-import MyLoader from "../../components/MyLoader";
+import Spinner from "../../components/Spinner"
 import "../../styles/layout/_search.scss"
 
-class Search extends Component {
-    state = {
-        query: null,
-    };
+export class Search extends Component {
+    state = {query: null};
 
     handleInputChange = (e) => {
         this.setState({query: e.target.value})
@@ -25,21 +25,20 @@ class Search extends Component {
 
     render() {
         const {error, loading, result, isSearchResultsVisible} = this.props;
-        const filteredResult = result.filter(item => item.poster_path && (item.name || item.title));
-
-        if (error) {console.log(error)}
-        if (loading) {return <MyLoader/>}
+        const filteredResult = result.filter(item => (item.name || item.title));
+        if (error) console.log(error);
+        if (loading) return <Spinner/>;
 
         return (
-            <div className="search_area">
+            <div className="search-area">
                 <Container className="primary-container">
-                    <form className="search_form" onSubmit={this.handleSubmit}>
+                    <form className="search-form" onSubmit={this.handleSubmit}>
                         <Icon name="search"
                               size="large"
-                              className="search_icon"
+                              className="search-icon"
                         />
                         <input type="text"
-                               className="search_input"
+                               className="search-input"
                                placeholder="Search for a Movie, Tv Show or Person"
                                onChange={this.handleInputChange}
                         />

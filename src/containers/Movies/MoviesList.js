@@ -1,23 +1,27 @@
 import React, {Component} from "react";
 import {connect} from "react-redux";
 import Proptypes from "prop-types";
+
+import {getMovies} from "./modules/getMoviesAction";
+
 import ItemCard from "../../components/ItemCard";
-import MyLoader from "../../components/MyLoader";
-import {getPopularMovies} from "./modules/getMoviesAction";
 import {Container} from "semantic-ui-react";
+import Spinner from "../../components/Spinner";
+import MovieFilter from "../../components/MovieFilter";
 
 class MoviesList extends Component {
     componentDidMount() {
-        this.props.getPopularMovies();
+        this.props.getMovies();
     }
 
     render() {
         const {error, loading, movies} = this.props;
-        if (error) {console.log(error)}
-        if (loading) {return <MyLoader/>}
+        if (error) console.log(error);
+        if (loading) return <Spinner/>;
 
         return (
             <Container className="primary-container">
+                <MovieFilter/>
                 {movies.map(movie => {
                         return (
                             <ItemCard
@@ -28,7 +32,7 @@ class MoviesList extends Component {
                                 release={movie.release_date}
                                 score={movie.vote_average}
                                 path={movie.poster_path}
-                                detailsUrl={`movies/${movie.id}`}
+                                detailsUrl={`movie/${movie.id}`}
                             />
                         )
                     }
@@ -55,7 +59,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = {
-    getPopularMovies,
+    getMovies
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(MoviesList);

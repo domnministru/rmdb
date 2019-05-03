@@ -1,0 +1,35 @@
+@import "../utils/variables";
+
+.sign {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  & h1 { margin-bottom: 20px; }
+  & p { padding: 5px; }
+  & div { padding: 5px; }
+}
+
+.sign-up {
+  @extend .sign;
+  width: 65%;
+}
+
+.sign-in {
+  @extend  .sign;
+  align-self: flex-start;
+}
+
+.sign-buttons {
+  @extend .sign;
+  width: 330px;
+  flex-direction: row;
+  justify-content: space-between;
+  & button { width: 150px; }
+}
+
+//SIGN UP INFO
+.sign-info {
+  @extend .sign;
+  align-self: flex-start;
+  width: 30%;
+}

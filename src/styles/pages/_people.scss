@@ -1,168 +1,221 @@
 @import "../utils/variables";
-
-.person_details_header {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-  width: 100%;
-  height: 500px;
-  background-color: $french_blue;
-
-  & .header_picture {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 300px;
-    max-width: 300px;
-    min-width: 300px;
-  }
-
-  & .info {
-    display: flex;
-    justify-content: flex-start;
-    flex-flow: column;
-    width: 70%;
-    font-size: 1.15em;
-    margin-top: -5%;
-
-    & .name-n-social {
-      display: flex;
-
-      & .name {
-        display: flex;
-      }
-
-      & .social {
-        display: flex;
-        padding: 0 20px;
-      }
-    }
-
-    & .bio {
-      display: flex;
-      flex-direction: column;
-      padding: 20px 0;
-    }
-  }
-}
-
-.person_details_body {
-  display: flex;
-  flex-flow: row nowrap;
-  width: 100%;
-  height: auto;
-  padding: 20px 0;
-
-  & .detailed_info {
-    display: flex;
-    width: 300px;
-    height: 900px;
-    flex-flow: column;
-    border-radius: 5px;
-    background-color: darken(#fff, 10%);
-  }
-
-  & .acting_info {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    padding: 0 20px;
-
-    & .known_for {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      height: auto;
-
-      & .movies {
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: space-between;
-
-        & .movie {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          height: 200px;
-          width: 120px;
-          border: 1px solid black;
-        }
-      }
-    }
-
-    & .acting {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      height: auto;
-
-      & .acting_list {
-        display: flex;
-        flex-direction: column;
-
-        & .acting_option {
-          display: inline-flex;
-          height: 50px;
-          width: 100%;
-          border: 1px solid black;
-        }
-      }
-    }
-  }
-}
-
-.actor-card {
+// PEOPLE PAGE Cards
+.people-card {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  flex-flow: column nowrap;
-  height: 423px;
+  flex-direction: column;
+  height: 440px;
   width: 240px;
-  margin-top: 10px;
-  box-shadow: 0 2px 8px $denim;
+  margin: 20px auto;
+  box-shadow: 5px 5px 5px rgba(0,0,0,0.1);
+}
 
-  & .actor-card_image {
-    width: 240px;
-    height: 360px;
+.people-card_image {
+  width: 240px;
+  height: 360px;
+}
+
+.people-card_content {
+  width: 100%;
+  padding: 5px;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  overflow: hidden;
+
+  .pc-name {
+    display: flex;
+    padding: 5px;
+    position: relative;
+    width: 100%;
   }
 
-  & .actor-card_content {
-    width: 100%;
-    padding: 5px;
+  & a {
+    color: #1a1b1c;
+  }
+
+  & a:hover {
+    text-decoration: underline;
+    -webkit-transform: scale(1.1);
+    transition: 250ms;
+  }
+
+  & .pc-movie-icon {
+    position: absolute;
+    right: 0;
+  }
+
+  .pc-info {
     display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    flex-flow: column wrap;
+    flex-flow: row wrap;
+    overflow: hidden;
+  }
+}
 
-    & .actor-card_name {
-      display: flex;
-      width: 100%;
-      padding: 5px;
+//PERSON PAGE PRESENTATION
+.person-page {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
 
-      & a {
-        color: #1a1b1c;
-      }
+.pp-presentation {
+  display: flex;
+  width: 100%;
+  padding: 50px 0;
+  background-color: $a;
+}
 
-      & a:hover {
-        text-decoration: underline;
-        -webkit-transform: scale(1.1);
-        transition: 250ms;
-      }
-    }
+.presentation-main_picture {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-    & .actor-card_info {
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      padding: 5px;
-      width: 100%;
-      line-height: 1.2em;
-      margin: 0;
+.presentation-main_info {
+  display: flex;
+  justify-content: flex-start;
+  align-self: flex-start;
+  flex-direction: column;
+  width: 70%;
+  font-size: 1.2em;
+}
+
+.presentation-general {
+  display: flex;
+  flex-direction: column;
+
+  & .presentation-name, .presentation-links {
+    display: flex;
+    padding-bottom: 25px;
+
+    & .pp-rounded-buttons {
+      margin: 0 15px 0 15px;
     }
   }
 }
 
+.presentation-bio {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding-bottom: 25px;
+
+  & p {
+    line-height: 25px;
+    max-height: 252px;
+    overflow: hidden;
+  }
+
+  & p:before {
+    content:  '. . .';
+    text-align: right;
+    position: absolute;
+    display:  block;
+    width:  2em;
+    height: 1em;
+    bottom: 1em;
+    right:  20px;
+  }
+}
 
 
+//PERSON PAGE BODY
+//PERSON PAGE DETAILS
+.pp-details {
+  display: flex;
+  align-self: flex-start;
+  height: auto;
+  width: 29%;
+  margin-top: 20px;
+  padding: 10px;
+  flex-flow: row wrap;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  background-color: $a;
+}
 
+//PERSON PAGE ACTING
+.pp_main {
+  display: flex;
+  flex-direction: column;
+  width: 69%;
+  height: auto;
+  padding: 10px;
+  margin-top: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
 
+.pp-acting {
+  display: flex;
+  height: auto;
+  flex-direction: column;
+  width: 100%;
+}
+
+.movie-card, .heading-card {
+  display: flex;
+  flex-flow: row nowrap;
+  width: 100%;
+  overflow: hidden;
+
+  & .mc-year, .hc-year {
+  @extend .movie-card;
+    width: 70px;
+  }
+
+  & .mc-title, .hc-title {
+    @extend .movie-card;
+    width: 400px;
+  }
+
+  & .mc-rating, .hc-rating {
+    @extend .movie-card;
+    width: 30px;
+  }
+
+  & .mc-character, .hc-department {
+    @extend .movie-card;
+    width: 200px;
+  }
+}
+
+//PERSON PAGE KNOWN_FOR
+.pp-known_for {
+  display: flex;
+  justify-content: center;
+  align-self: flex-start;
+  flex-direction: column;
+  margin-top: 20px;
+  padding: 10px 0;
+  height: auto;
+  width: 100%;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+
+  & .tns-outer {
+    position: relative;
+    display: flex;
+    width: 100%;
+    align-items: center;
+  }
+}
+
+.known-for_card {
+  display: flex;
+  flex-direction: column;
+  height: 350px;
+
+  & .known-for_image {
+    display: flex;
+    justify-content: center;
+  }
+
+  & .known-for_text {
+    display: flex;
+    justify-self: center;
+    width: 154px;
+    margin: 10px auto;
+    overflow: hidden;
+  }
+}

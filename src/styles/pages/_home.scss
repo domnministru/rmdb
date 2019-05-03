@@ -1,84 +1,100 @@
-.top-content {
+.home-page {
+  display: grid;
+  grid-template-areas:
+          "card-one card-three card-three"
+          "card-one logo card-four "
+          "card-two card-two card-four ";
+  grid-template-rows: 240px 240px 240px;
+  grid-template-columns: 360px 360px 360px;
+  grid-row-gap: 22px;
+  grid-column-gap: 22px;
+  height: auto;
   width: 100%;
-  margin-top: 25px;
-  height: 710px;
-  display: flex;
-  justify-content: space-between;
-  flex-flow: row wrap;
-  position: relative;
+  margin: 20px 0;
 }
 
-.movieOne {
-  position: absolute;
-  top: 0;
-  left: 0;
-  overflow: hidden;
-  width: 480px;
-  height: 490px;
+.home-card {
+  transition: transform .5s;
+
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity 2s cubic-bezier(.165, .84, .44, 1);
+    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, .2), 0 6px 20px 0 rgba(0, 0, 0, .15);
+    content: '';
+    opacity: 0;
+    z-index: -1;
+  }
+
+  &:hover,
+  &:focus {
+    transform: scale3d(1.01, 1.01, 1);
+
+    &::after {
+      opacity: 1;
+    }
+  }
+}
+
+.card-one {
+  grid-area: card-one;
   background: {
-    image: url(../../images/movie-1.jpg);
+    image: url(../../images/endgame.jpg);
+    position: center center;
+    repeat: no-repeat;
+    size: cover;
+  }
+}
+.card-two {
+  grid-area: card-two;
+  background: {
+    image: url(../../images/superanatural.jpg);
     position: top center;
     repeat: no-repeat;
     size: cover;
   }
 }
-
-.movieTwo {
-  position: absolute;
-  top: 220px;
-  left: 500px;
-  overflow: hidden;
-  width: 300px;
-  height: 270px;
+.logo {
+  grid-area: logo;
   background: {
-    image: url(../../images/movie-2.jpg);
-    position: top center;
+    image: url(../../images/logo1/logo_transparent.png);
+    position: center center;
+    repeat: no-repeat;
+    size: cover;
+  }
+}
+.card-three {
+  grid-area: card-three;
+  background: {
+    image: url(../../images/game-of-thrones.jpg);
+    position: center center;
+    repeat: no-repeat;
+    size: cover;
+  }
+}
+.card-four {
+  grid-area: card-four ;
+  background: {
+    image: url(../../images/after.jpg);
+    position: center center;
     repeat: no-repeat;
     size: cover;
   }
 }
 
-.showOne {
-  position: absolute;
-  top: 0;
-  right: 0;
-  overflow: hidden;
-  width: 627px;
-  height: 200px;
-  background: {
-    image: url(../../images/show-1.jpg);
-    position: top center;
-    repeat: no-repeat;
-    size: cover;
-  }
-}
-
-.showTwo {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  overflow: hidden;
-  width: 305px;
-  height: 490px;
-  background: {
-    image: url(../../images/show-2.jpg);
-    position: top center;
-    repeat: no-repeat;
-    size: cover;
-  }
-}
-
-.people {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  overflow: hidden;
-  width: 800px;
-  height: 200px;
-  background: {
-    image: url(../../images/people.jpg);
-    position: top center;
-    repeat: no-repeat;
-    size: cover;
+/* Stack the layout on small devices/viewports. */
+@media all and (max-width: 575px) {
+  body {
+    grid-template-areas:
+            "movie1"
+            "movie2"
+            "logo"
+            "show1"
+            "show2";
+    grid-template-rows: 80px 1fr 70px 1fr 70px;
+    grid-template-columns: 1fr;
   }
 }

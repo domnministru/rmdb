@@ -1,0 +1,120 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should match the snapshot 1`] = `
+<div
+  className="search_area"
+>
+  <Container
+    className="primary-container"
+  >
+    <form
+      className="search_form"
+      onSubmit={[Function]}
+    >
+      <Icon
+        as="i"
+        className="search_icon"
+        name="search"
+        size="large"
+      />
+      <input
+        className="search_input"
+        onChange={[Function]}
+        placeholder="Search for a Movie, Tv Show or Person"
+        type="text"
+      />
+    </form>
+  </Container>
+</div>
+`;
+
+exports[`should match the snapshot 2`] = `<MyLoader />`;
+
+exports[`should match the snapshot 3`] = `
+<div
+  className="search_area"
+>
+  <Container
+    className="primary-container"
+  >
+    <form
+      className="search_form"
+      onSubmit={[Function]}
+    >
+      <Icon
+        as="i"
+        className="search_icon"
+        name="search"
+        size="large"
+      />
+      <input
+        className="search_input"
+        onChange={[Function]}
+        placeholder="Search for a Movie, Tv Show or Person"
+        type="text"
+      />
+    </form>
+  </Container>
+</div>
+`;
+
+exports[`should match the snapshot with error 1`] = `
+<div
+  className="search_area"
+>
+  <Container
+    className="primary-container"
+  >
+    <form
+      className="search_form"
+      onSubmit={[Function]}
+    >
+      <Icon
+        as="i"
+        className="search_icon"
+        name="search"
+        size="large"
+      />
+      <input
+        className="search_input"
+        onChange={[Function]}
+        placeholder="Search for a Movie, Tv Show or Person"
+        type="text"
+      />
+    </form>
+  </Container>
+</div>
+`;
+
+exports[`should match the snapshot with isSearchResultsVisible 1`] = `
+<div
+  className="search_area"
+>
+  <Container
+    className="primary-container"
+  >
+    <form
+      className="search_form"
+      onSubmit={[Function]}
+    >
+      <Icon
+        as="i"
+        className="search_icon"
+        name="search"
+        size="large"
+      />
+      <input
+        className="search_input"
+        onChange={[Function]}
+        placeholder="Search for a Movie, Tv Show or Person"
+        type="text"
+      />
+    </form>
+    <ConnectFunction
+      result={Array []}
+    />
+  </Container>
+</div>
+`;
+
+exports[`should match the snapshot with loading true 1`] = `<MyLoader />`;

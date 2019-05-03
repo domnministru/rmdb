@@ -1,0 +1,48 @@
+@import "../utils/variables";
+
+.card {
+  display: flex;
+  padding: 5px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+  & .image {
+    width: 185px;
+    height: 280px;
+  }
+}
+
+.movie_show-card {
+  @extend .card;
+  margin-bottom: 10px;
+  height: 290px;
+  width: 100%;
+}
+
+.content {
+  @extend .card;
+  flex-direction: column;
+  box-shadow: none;
+
+  & .name {
+    @extend .card;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 2em;
+    font-weight: bold;
+    height: 50px;
+    margin-top: 0;
+    box-shadow: none;
+    & a { color: #1a1b1c; }
+    & a:hover { text-decoration: underline; }
+  }
+
+  & .release {
+    @extend .name;
+    font-size: 0.75em;
+  }
+
+  & .info {
+    @extend .name;
+    font-size: 1em;
+    font-weight: normal;
+  }
+}

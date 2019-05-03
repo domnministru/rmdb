@@ -9,7 +9,6 @@ const initialState = {
     loading: false,
     error: null,
     isSearchResultsVisible: false,
-    //suggestions true/false
 };
 
 const searchReducer = (state = initialState, action) => {

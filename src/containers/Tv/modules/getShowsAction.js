@@ -20,13 +20,12 @@ export const getPopularShowsFailure = error => ({
     error
 });
 
-export const getPopularShows = () => {
+export const getPopularShows = (value="popular") => {
     return dispatch => {
         dispatch(getPopularShowsBegin());
-        axios.get(`${DEFAULT_URL}tv/popular?api_key=${KEY}&language=en-US&page=1`)
+        axios.get(`${DEFAULT_URL}tv/${value}?api_key=${KEY}&language=en-US&page=1`)
             .then(result => {
                 dispatch(getPopularShowsSuccess(result.data.results));
-                console.log(result.data.results);
             })
             .catch(error => dispatch(getPopularShowsFailure()));
     };

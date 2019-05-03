@@ -1,17 +1,18 @@
 import React from "react";
-import {Link} from "react-router-dom";
 import Proptypes from "prop-types";
-import {Image} from "semantic-ui-react";
+import {Link} from "react-router-dom";
+
 import {DEFAULT_IMG_URL, BIG_IMG} from "../const";
 
-import "../styles/components/_itemCard.scss"
+import {Image} from "semantic-ui-react";
+import "../styles/components/_cards.scss"
 
 const ItemCard = props => {
     let {path, title, overview, release, detailsUrl} = props;
     let imageLink = DEFAULT_IMG_URL + BIG_IMG + path;
 
     return (
-        <div className="item-card">
+        <div className="card movie_show-card">
             <Image className="image" src={imageLink}/>
 
             <div className="content">

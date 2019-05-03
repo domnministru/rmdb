@@ -1,0 +1,71 @@
+@import "../utils/variables";
+//MAIN
+.tickets-page {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+//FILTER
+.tickets-filters {
+  @extend .tickets-page;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 50px;
+  z-index: 99;
+}
+
+//DATEPICKER
+.react-datepicker__input-container {
+  & input {
+    cursor: pointer;
+    word-wrap: break-word;
+    line-height: 1em;
+    white-space: normal;
+    outline: 0;
+    transform: rotateZ(0);
+    width: 14em;
+    min-height: 2.71428571em;
+    background: #fff;
+    display: inline-block;
+    padding: .78571429em 2.1em .78571429em 1em;
+    color: rgba(0,0,0,.87);
+    box-shadow: none;
+    border: 1px solid rgba(34,36,38,.15);
+    border-radius: .28571429rem;
+    transition: width .1s ease;
+  }
+}
+
+//CONTENT
+.tickets-list {
+  @extend .tickets-page;
+  justify-content: space-evenly;
+}
+
+.ticket-card {
+  @extend .tickets-page;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 500px;
+  height: auto;
+  margin-bottom: 30px;
+  overflow: hidden;
+  z-index: 5;
+  & h1 {
+    color: #fff;
+    padding: 30px;
+    text-align: center;
+    font-weight: 100;
+    font-size: 25px;
+    background: rgba(0,0,0,0.8);
+    box-shadow: 0 0 30px rgba(0,0,0,0.8);
+  }
+}
+
+.ticket-desc {
+  @extend .tickets-page;
+  position: absolute;
+  bottom: 0;
+}
