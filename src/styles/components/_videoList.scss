@@ -1,0 +1,17 @@
+@import "../utils/variables";
+//VIDEO LIST
+.video-list {
+  display: flex;
+  height: auto;
+  width: auto;
+  margin-top: 20px;
+  flex-flow: row wrap;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.vl-card {
+  display: flex;
+  height: auto;
+  width: 790px;
+}

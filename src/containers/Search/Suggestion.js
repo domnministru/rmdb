@@ -1,13 +1,13 @@
 import React from "react";
 
-import {DEFAULT_IMG_URL, SMALL_IMG} from "../../const";
+import {DEFAULT_IMG_URL, W45} from "../../const";
 
 import {Image} from "semantic-ui-react";
 import noImage from "../../images/no-img.png"
 
 const Suggestion = props => {
     const {title, release, path, type } = props;
-    const imageLink = DEFAULT_IMG_URL + SMALL_IMG + path;
+    const imageLink = DEFAULT_IMG_URL + W45 + path;
 
     return (
         <div className="suggestion-body">

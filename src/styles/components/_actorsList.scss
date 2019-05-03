@@ -1,0 +1,37 @@
+@import "../utils/variables";
+
+.actors-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  & h1 { padding: 20px; }
+
+  & .tns-outer {
+    & .tns-controls {
+      button { margin-top: 30px }
+    }
+  }
+}
+
+//AL Card
+.al-card {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+
+  & .al-image {
+    @extend .al-card;
+    align-self: center;
+    justify-self: center;
+    max-width: 200px;
+  }
+
+  & .al-text {
+    @extend .al-card;
+    justify-content: center;
+    width: 185px;
+    margin: 10px auto;
+    overflow: hidden;
+  }
+}

@@ -8,6 +8,9 @@ import ActorCard from "./ActorCard";
 import Slider from "./Slider";
 import Spinner from "./Spinner";
 
+import "../styles/components/_slider.scss";
+import "../styles/components/_actorsList.scss";
+
 class ActorsList extends Component {
     componentDidMount() {
         this.props.getCredits(this.props.content_type, this.props.id);
@@ -19,7 +22,7 @@ class ActorsList extends Component {
         if (loading) return <Spinner/>;
 
         return (
-            <div className="cast">
+            <div className="actors-list">
                 <Container>
                     <h1> Actor List </h1>
                     <Slider
@@ -32,7 +35,7 @@ class ActorsList extends Component {
                         {
                             cast.map(item => (
                                 <div key={item.cast_id} className="carousel-cell">
-                                    <ActorCard cast={item} />
+                                    <ActorCard cast={item}/>
                                 </div>
                             ))
                         }

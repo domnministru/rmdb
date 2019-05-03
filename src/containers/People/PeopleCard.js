@@ -2,14 +2,14 @@ import React from "react";
 import Proptypes from "prop-types";
 import { Link } from "react-router-dom";
 
-import {DEFAULT_IMG_URL, MEDIUM_IMG} from "../../const";
+import {DEFAULT_IMG_URL, W300} from "../../const";
 
 import {Icon, Image} from "semantic-ui-react";
 import "../../styles/pages/_people.scss";
 
 const PeopleCard = props => {
     let { id, name, path, known_for } = props;
-    let imageLink = DEFAULT_IMG_URL + MEDIUM_IMG + path;
+    let imageLink = DEFAULT_IMG_URL + W300 + path;
 
     return(
         <div className="people-card">

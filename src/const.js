@@ -1,12 +1,6 @@
 export const DEFAULT_YTB_LINK = `https://www.youtube.com/watch?v=`;
 export const DEFAULT_IMG_URL = `https://image.tmdb.org/t/p/`;
 export const DEFAULT_URL = `https://api.themoviedb.org/3/`;
-export const SMALL_IMG =`w45`;
-export const PROFILE_IMG=`w185`;
-export const MEDIUM_IMG =`w300`;
-export const BIG_IMG = `w500`;
-
-
 
 //backdrop_sizes
 //export const W300 = `w300`;
@@ -23,7 +17,7 @@ export const W300 = "w300";
 export const W500 = "w500";
 export const ORIGINAL = "original";
 
-//poster_sizes": [
+//poster_sizes
 //export const W92 = "w92";
 //export const W154 = "w154";
 //export const W185 = "w185";

@@ -8,6 +8,7 @@ import AddBtn from "./Buttons/AddBtn";
 import CrewMember from "./CrewMember";
 import {Container, Image} from "semantic-ui-react";
 import "../styles/components/_presentation.scss"
+import "../styles/components/_buttons.scss"
 
 const Presentation = props => {
     const { title, release, overview, poster_path } = props;

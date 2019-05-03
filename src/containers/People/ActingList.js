@@ -8,6 +8,7 @@ import Spinner from "../../components/Spinner";
 import ActingCard from "./ActingCard";
 import HeadingCard from "./HeadingCard";
 import "../../styles/pages/_people.scss";
+import "../../styles/components/_slider.scss";
 
 class ActingList extends Component {
     componentDidMount() {

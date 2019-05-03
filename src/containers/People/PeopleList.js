@@ -9,6 +9,7 @@ import {Container} from "semantic-ui-react";
 import Spinner from "../../components/Spinner";
 import "../../styles/pages/_people.scss";
 
+
 class PeopleList extends Component {
     componentDidMount() {
         this.props.getPopularPeople();

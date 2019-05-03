@@ -6,6 +6,8 @@ import {getVideos} from "../actions/getVideosAction";
 import Slider from "./Slider";
 import VideoCard from "./VideoCard";
 import Spinner from "./Spinner";
+import "../styles/components/_slider.scss";
+import "../styles/components/_videoList.scss"
 
 class VideoList extends Component {
     componentDidMount() {

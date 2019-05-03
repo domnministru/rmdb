@@ -9,7 +9,7 @@ const VideoCard = props => {
     const LINK = DEFAULT_YTB_LINK + key;
 
     return(
-        <div className="video-card">
+        <div className="vl-card">
             <Player>
                 <source src={LINK}/>
             </Player>

@@ -1,0 +1,25 @@
+@import "../utils/variables";
+//BOXES
+.movie-box, .show-box {
+  display: flex;
+  align-self: flex-start;
+  height: auto;
+  width: 29%;
+  margin-top: 20px;
+  padding: 10px;
+  flex-flow: row wrap;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background-color: $a;
+}
+
+.single-box, .multiline-box {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  & p {
+    margin: 0;
+  }
+}

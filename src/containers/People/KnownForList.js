@@ -8,6 +8,7 @@ import KnownForCard from "./KnownForCard";
 import Slider from "../../components/Slider";
 import Spinner from "../../components/Spinner";
 import "../../styles/pages/_people.scss";
+import "../../styles/components/_slider.scss";
 
 class KnownForList extends Component {
     componentDidMount() {

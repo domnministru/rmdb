@@ -1,0 +1,33 @@
+//IMAGE LIST
+.image-list {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  width: auto;
+  overflow: hidden;
+}
+
+.image-card {
+  @extend .image-list;
+  justify-content: center;
+  margin: 2.5px;
+}
+
+.posters {
+  margin: 10px 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  h1 { padding: 5px 10px; }
+}
+
+.backdrops {
+  @extend .posters;
+  .tns-controls {
+    margin-top: -45px;
+
+    & button {
+      margin: 0 5px;
+      height: 40px;
+      width: 40px;
+    }
+  }
+}

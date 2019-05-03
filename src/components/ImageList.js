@@ -7,6 +7,8 @@ import Slider from "./Slider";
 import Spinner from "./Spinner";
 import PosterCard from "./PosterCard";
 import BackdropCard from "./BackdropCard";
+import "../styles/components/_slider.scss";
+import "../styles/components/_imageList.scss";
 
 class ImageList extends Component {
     componentDidMount() {

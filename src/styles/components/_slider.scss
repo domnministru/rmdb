@@ -1,0 +1,46 @@
+@import "../utils/variables";
+//SLIDER
+.tns-outer {
+  display: flex;
+  position: relative;
+  width: 100%;
+  & .tns-controls {
+    display: none;
+  }
+}
+
+.tns-outer:hover {
+  .tns-controls {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    width: 100%;
+    height: 0;
+    top: 0;
+    z-index: 900;
+  }
+
+  & button {
+    height: 55px;
+    width: 55px;
+    border: none;
+    border-radius: 50%;
+    overflow: hidden;
+    background: $f;
+    outline: none;
+    transform: translate(0, 80px);
+    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.05), 0 1px 0 1px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(0, 0, 0, 0.05);
+    z-index: 999;
+  }
+
+  & button:hover {
+    background: $f;
+  }
+
+  & button img {
+    display: block;
+    width: 76%;
+    padding: 12%;
+    height: auto;
+  }
+}

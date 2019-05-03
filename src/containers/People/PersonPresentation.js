@@ -1,13 +1,13 @@
 import React from "react";
 
-import {DEFAULT_IMG_URL, MEDIUM_IMG} from "../../const";
+import {DEFAULT_IMG_URL, W300} from "../../const";
 
 import {Button, Container, Image} from "semantic-ui-react";
 import "../../styles/pages/_people.scss";
 
 const PersonPresentation = props => {
     const {name, birthday, deathday, biography, profile_path} = props;
-    const IMG = DEFAULT_IMG_URL + MEDIUM_IMG + profile_path;
+    const IMG = DEFAULT_IMG_URL + W300 + profile_path;
 
     return (
         <div className="pp-presentation">

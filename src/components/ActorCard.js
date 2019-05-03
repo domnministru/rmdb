@@ -1,17 +1,15 @@
 import React from "react";
 
-import {DEFAULT_IMG_URL, PROFILE_IMG} from "../const";
+import {DEFAULT_IMG_URL, W185} from "../const";
 
 const ActorCard = props => {
     let { cast: { profile_path, name, character }}= props;
-    let IMG = DEFAULT_IMG_URL + PROFILE_IMG + profile_path;
+    let IMG = DEFAULT_IMG_URL + W185 + profile_path;
 
     return(
-        <div className="cast-card">
-            <div className="cast-image">
-                <img src={IMG} alt=""/>
-            </div>
-            <div className="cast-text">
+        <div className="al-card">
+            <img src={IMG} alt="" className="al-image"/>
+            <div className="al-text">
                 <h2>{name}</h2>
                 <h3>{character}</h3>
             </div>
