@@ -25,6 +25,3 @@ yarn-error.log*
 
 # private
 ./src/key.js
-
-# no lockfile.
-package-lock.json
