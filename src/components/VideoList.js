@@ -3,8 +3,8 @@ import {connect} from "react-redux";
 
 import {getVideos} from "../actions/getVideosAction";
 
-import Slider from "./Slider";
 import VideoCard from "./VideoCard";
+import Slider from "./Slider";
 import Spinner from "./Spinner";
 import "../styles/components/_slider.scss";
 import "../styles/components/_videoList.scss"
@@ -21,18 +21,21 @@ class VideoList extends Component {
 
         return (
             <div className="video-list">
+                <h1> Trailers and Promos </h1>
                 <Slider
                     items={1}
-                    mouseDrag={true}
-                    arrowKeys={true}
+                    mouseDrag={false}
+                    arrowKeys={false}
                     controls={"#customize-controls"}
                     nav={false}
                 >
                     {
-                        videos.map(video => (
-                            <div key={video.id} className="carousel-cell">
-                                <VideoCard video={video}/>
-                            </div>
+                        videos.slice(0,5).map(video => (
+                            <VideoCard
+                                key={video.id}
+                                className="carousel-cell"
+                                video={video}
+                            />
                         ))
                     }
                 </Slider>
