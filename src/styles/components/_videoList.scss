@@ -8,9 +8,19 @@
   margin-top: 20px;
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  //background-color: black;
+  background-color: black;
+
+  & h1 {
+    width: 100%;
+    padding: 5px 10px;
+    background-color: white;
+  }
+
   & .tns-controls {
     margin-top: 70px;
+    & button {
+      margin: 0 10px;
+    }
   }
 }
 

@@ -6,18 +6,18 @@ import {Image} from "semantic-ui-react";
 import noImage from "../../images/no-img.png"
 
 const Suggestion = props => {
-    const {title, release, path, type } = props;
-    const imageLink = DEFAULT_IMG_URL + W45 + path;
+    const {title, release, path, type} = props;
+    const URL = DEFAULT_IMG_URL + W45 + path;
 
     return (
         <div className="suggestion-body">
             <Image className="suggestion-image"
                    src={
                        path ?
-                           (imageLink) :
+                           (URL) :
                            (noImage)
-                   }>
-            </Image>
+                   }
+            />
             <div className="suggestion-info">
                 <div className="suggestion-title">
                     <h2>{title}</h2>

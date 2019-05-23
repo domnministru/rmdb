@@ -1,19 +1,26 @@
 import React from "react";
 import Proptypes from "prop-types";
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
 
 import {DEFAULT_IMG_URL, W300} from "../../const";
 
 import {Icon, Image} from "semantic-ui-react";
 import "../../styles/pages/_people.scss";
+import noImage from "../../images/no-img.png";
 
 const PeopleCard = props => {
-    let { id, name, path, known_for } = props;
-    let imageLink = DEFAULT_IMG_URL + W300 + path;
+    let {id, name, path, known_for} = props;
+    let URL = DEFAULT_IMG_URL + W300 + path;
 
-    return(
+    return (
         <div className="people-card">
-            <Image className="people-card_image" src={imageLink}/>
+            <Image className="people-card_image"
+                   src={
+                       path ?
+                           (URL) :
+                           (noImage)
+                   }
+            />
 
             <div className="people-card_content">
                 <div className="pc-name">
@@ -22,7 +29,7 @@ const PeopleCard = props => {
                 </div>
 
                 <div className="pc-info">
-                    {known_for.map((starred,index) => <i key={index}>{starred.title},&nbsp;&nbsp;</i>)}
+                    {known_for.map((starred, index) => <i key={index}>{starred.title},&nbsp;&nbsp;</i>)}
                 </div>
             </div>
         </div>
