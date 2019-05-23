@@ -4,6 +4,9 @@
   display: flex;
   width: 100%;
   background-color: $a;
+  & h1 {
+    font-size: 2em;
+  }
 }
 
 .presentation-buttons {

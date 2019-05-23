@@ -1,18 +1,18 @@
 import React from "react";
+import ReactPlayer from "react-player";
 
 import {DEFAULT_YTB_LINK} from "../const";
 
-import { Player } from "video-react";
-
 const VideoCard = props => {
     const { video: { key }} = props;
-    const LINK = DEFAULT_YTB_LINK + key;
+    const URL = DEFAULT_YTB_LINK + key;
 
     return(
         <div className="vl-card">
-            <Player>
-                <source src={LINK}/>
-            </Player>
+            <ReactPlayer
+                url={URL}
+                controls
+            />
         </div>
     )
 };

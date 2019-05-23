@@ -13,7 +13,6 @@ import "../styles/components/_imageList.scss";
 class ImageList extends Component {
     componentDidMount() {
         this.props.getImages(this.props.content_type, this.props.id);
-        console.log("props:",this.props)
     }
 
     render() {

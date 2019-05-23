@@ -26,7 +26,6 @@ export const getImages = (content_type, id) => {
         axios.get(`${DEFAULT_URL}${content_type}/${id}/images?api_key=${KEY}`)
             .then(result => {
                 dispatch(getImagesSuccess(result.data));
-                console.log("images:",result.data);
             })
             .catch(error => dispatch(getImagesFailure()))
     }

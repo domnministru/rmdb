@@ -2,16 +2,21 @@
 //VIDEO LIST
 .video-list {
   display: flex;
+  flex-direction: column;
   height: auto;
   width: auto;
   margin-top: 20px;
-  flex-flow: row wrap;
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  //background-color: black;
+  & .tns-controls {
+    margin-top: 70px;
+  }
 }
 
 .vl-card {
   display: flex;
   height: auto;
-  width: 790px;
+  width: auto;
+  padding: 0 75px;
 }
