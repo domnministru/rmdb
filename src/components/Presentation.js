@@ -11,8 +11,13 @@ import "../styles/components/_presentation.scss"
 import "../styles/components/_buttons.scss"
 
 const Presentation = props => {
-    const { title, release, overview, poster_path } = props;
+    const { title, release, overview = " ", poster_path } = props;
     const poster = DEFAULT_IMG_URL + W300 + poster_path;
+
+    let string = overview;
+    let maxLength = 1000;
+    let trimmedString = string.substring(0,maxLength);
+    trimmedString = trimmedString.substr(0, Math.min(trimmedString.length, trimmedString.lastIndexOf("."))) + " . . . ";
 
     return(
         <div className="presentation">
@@ -30,7 +35,7 @@ const Presentation = props => {
                     <div className="presentation-overview_and_crew">
                         <div className="presentation-overview">
                             <h3>Overview</h3>
-                            <p>{overview}</p>
+                            <p>{trimmedString}</p>
                         </div>
                         <div className="presentation-crew">
                             <h3>Featured Crew</h3>

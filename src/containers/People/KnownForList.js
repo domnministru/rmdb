@@ -20,12 +20,14 @@ class KnownForList extends Component {
         if (error) console.log(error);
         if (loading) return <Spinner/>;
 
+        console.log(cast);
+
         return (
-            <div className="pp-known_for">
+            <div className="kf-list">
                 <Container>
                     <h1 className="heading-text"> Known For </h1>
                     <Slider
-                        items={6}
+                        items={7}
                         mouseDrag={true}
                         arrowKeys={true}
                         nav={false}
@@ -36,7 +38,7 @@ class KnownForList extends Component {
                                     <KnownForCard
                                         key={best.id}
                                         id={best.id}
-                                        title={best.title}
+                                        title={best.title || best.name}
                                         path={best.poster_path}
                                     />
                                 </div>

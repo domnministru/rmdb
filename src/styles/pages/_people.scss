@@ -103,23 +103,10 @@
   padding-bottom: 25px;
 
   & p {
-    line-height: 25px;
-    max-height: 252px;
+    line-height: 28px;
     overflow: hidden;
   }
-
-  & p:before {
-    content:  '. . .';
-    text-align: right;
-    position: absolute;
-    display:  block;
-    width:  2em;
-    height: 1em;
-    bottom: 1em;
-    right:  20px;
-  }
 }
-
 
 //PERSON PAGE BODY
 //PERSON PAGE DETAILS
@@ -139,6 +126,7 @@
 //PERSON PAGE ACTING
 .pp_main {
   display: flex;
+  align-self: flex-start;
   flex-direction: column;
   width: 69%;
   height: auto;
@@ -182,7 +170,7 @@
 }
 
 //PERSON PAGE KNOWN_FOR
-.pp-known_for {
+.kf-list {
   display: flex;
   justify-content: center;
   align-self: flex-start;
@@ -198,24 +186,29 @@
     display: flex;
     width: 100%;
     align-items: center;
+    & button {
+        margin: 0 10px;
+    }
   }
 }
 
-.known-for_card {
+.kf-card {
   display: flex;
   flex-direction: column;
-  height: 350px;
+  height: auto;
 
-  & .known-for_image {
-    display: flex;
-    justify-content: center;
+  & .kf-image {
+    @extend .kf-card;
+    align-self: center;
+    justify-self: center;
+    max-height: 222px;
+    max-width: 154px;
   }
 
-  & .known-for_text {
-    display: flex;
-    justify-self: center;
-    width: 154px;
-    margin: 10px auto;
+  & .kf-text {
+    @extend .kf-image;
+    background-color: white;
+    margin: 20px auto;
     overflow: hidden;
   }
 }

@@ -6,8 +6,13 @@ import {Button, Container, Image} from "semantic-ui-react";
 import "../../styles/pages/_people.scss";
 
 const PersonPresentation = props => {
-    const {name, birthday, deathday, biography, profile_path} = props;
+    const {name, birthday, deathday, biography = " ", profile_path} = props;
     const IMG = DEFAULT_IMG_URL + W300 + profile_path;
+
+    let string = biography;
+    let maxLength = 800;
+    let trimmedBIO = string.substring(0,maxLength);
+    trimmedBIO = trimmedBIO.substr(0, Math.min(trimmedBIO.length, trimmedBIO.lastIndexOf("."))) + " . . . ";
 
     return (
         <div className="pp-presentation">
@@ -32,7 +37,7 @@ const PersonPresentation = props => {
                     </div>
                     <div className="presentation-bio">
                         <h2>Biography</h2>
-                        <p>{biography}</p>
+                        <p>{trimmedBIO}</p>
                     </div>
                 </div>
             </Container>

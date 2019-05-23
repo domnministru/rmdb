@@ -4,17 +4,23 @@ import {Link} from "react-router-dom";
 
 import {DEFAULT_IMG_URL, W500} from "../const";
 
+import noImage from "../images/no-img.png";
 import {Image} from "semantic-ui-react";
 import "../styles/components/_cards.scss"
 
 const ItemCard = props => {
     let {path, title, overview, release, detailsUrl} = props;
-    let imageLink = DEFAULT_IMG_URL + W500 + path;
+    let URL = DEFAULT_IMG_URL + W500 + path;
 
     return (
         <div className="card movie_show-card">
-            <Image className="image" src={imageLink}/>
-
+            <Image className="image"
+                   src={
+                       path ?
+                           (URL) :
+                           (noImage)
+                   }
+            />
             <div className="content">
                 <div className="name">
                     <Link to={detailsUrl}>{title}</Link>
