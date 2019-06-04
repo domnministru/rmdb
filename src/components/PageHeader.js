@@ -7,7 +7,7 @@ import "../styles/layout/_header.scss"
 class PageHeader extends Component {
     render() {
         return (
-            <header className="app_header">
+            <header>
                 <Menu/>
                 <Search/>
             </header>

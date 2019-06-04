@@ -12,6 +12,7 @@
 .sign-up {
   @extend .sign;
   width: 65%;
+  align-self: flex-start;
 }
 
 .sign-in {
@@ -27,9 +28,33 @@
   & button { width: 150px; }
 }
 
-//SIGN UP INFO
 .sign-info {
   @extend .sign;
   align-self: flex-start;
   width: 30%;
+  border: 1px solid $denim;
+  border-radius: 25px;
+  padding: 20px;
+  & p {
+    margin: 0;
+  }
+  & p:before {
+    content: "✭";
+    white-space: pre;
+  }
+  & p:after {
+    content: "✭";
+    white-space: pre;
+  }
+}
+
+.logo {
+  height: 150px;
+  width: 100%;
+  background: {
+    image: url(../../images/logo1/logo_transparent.png);
+    position: center center;
+    repeat: no-repeat;
+    size: cover;
+  }
 }
