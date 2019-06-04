@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import {connect} from "react-redux";
 
-import {getVideos} from "../actions/getVideosAction";
+import {getVideos} from "../actions/VideosAction";
 
 import VideoCard from "./VideoCard";
 import Slider from "./Slider";

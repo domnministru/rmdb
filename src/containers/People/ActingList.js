@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import {connect} from "react-redux";
 
-import {getPersonCredits} from "./modules/getPersonCreditsAction"
+import {getPersonCredits} from "./modules/PersonCreditsAction"
 
 
 import Spinner from "../../components/Spinner";

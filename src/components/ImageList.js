@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import {connect} from "react-redux";
 
-import {getImages} from "../actions/getImagesAction";
+import {getImages} from "../actions/ImagesAction";
 
 import Slider from "./Slider";
 import Spinner from "./Spinner";

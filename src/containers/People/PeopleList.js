@@ -2,7 +2,7 @@ import  React, {Component} from "react";
 import {connect} from "react-redux";
 import Proptypes from "prop-types";
 
-import {getPopularPeople} from "./modules/peopleAction";
+import {getPopularPeople} from "./modules/PeopleAction";
 
 import PeopleCard from "./PeopleCard";
 import {Container} from "semantic-ui-react";

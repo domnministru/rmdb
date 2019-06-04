@@ -2,7 +2,7 @@ import {
     GET_PERSON_CREDITS_BEGIN,
     GET_PERSON_CREDITS_SUCCESS,
     GET_PERSON_CREDITS_FAILURE
-} from "./getPersonCreditsAction";
+} from "./PersonCreditsAction";
 
 const initialState = {
     personCredits: {
@@ -14,7 +14,7 @@ const initialState = {
     error: null,
 };
 
-const getPersonCreditsReducer = (state = initialState, action) => {
+const personCreditsReducer = (state = initialState, action) => {
     switch (action.type) {
         case GET_PERSON_CREDITS_BEGIN:
             return {
@@ -39,4 +39,4 @@ const getPersonCreditsReducer = (state = initialState, action) => {
     }
 };
 
-export default getPersonCreditsReducer;
+export default personCreditsReducer;

@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {connect} from "react-redux";
 import Proptypes from "prop-types";
 
-import {getSpecificPerson} from "./modules/personAction";
+import {getSpecificPerson} from "./modules/PersonAction";
 
 import PersonPresentation from "./PersonPresentation";
 import PersonDetails from "./PersonDetails";

@@ -1,8 +1,8 @@
 import {
-    GET_POPULAR_PEOPLE_BEGIN,
-    GET_POPULAR_PEOPLE_SUCCESS,
-    GET_POPULAR_PEOPLE_FAILURE
-} from "./peopleAction";
+    GET_MOVIES_BEGIN,
+    GET_MOVIES_SUCCESS,
+    GET_MOVIES_FAILURE
+} from "./MoviesAction";
 
 const initialState = {
     data: [],
@@ -10,28 +10,27 @@ const initialState = {
     error: null
 };
 
-const peopleReducer = (state = initialState, action) => {
+const moviesReducer = (state = initialState, action) => {
     switch(action.type) {
-        case GET_POPULAR_PEOPLE_BEGIN:
+        case GET_MOVIES_BEGIN:
             return {
                 ...state,
                 loading: true,
                 error: null
             };
 
-        case GET_POPULAR_PEOPLE_SUCCESS:
+        case GET_MOVIES_SUCCESS:
             return {
                 ...state,
                 loading: false,
                 data: action.data
             };
 
-        case GET_POPULAR_PEOPLE_FAILURE:
+        case GET_MOVIES_FAILURE:
             return {
                 ...state,
                 loading: false,
                 error: action.error,
-                data: []
             };
 
         default:
@@ -39,4 +38,4 @@ const peopleReducer = (state = initialState, action) => {
     }
 };
 
-export default peopleReducer;
+export default moviesReducer;

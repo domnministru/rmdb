@@ -1,32 +1,34 @@
 import {
-    GET_MOVIES_BEGIN,
-    GET_MOVIES_SUCCESS,
-    GET_MOVIES_FAILURE
-} from "./getMoviesAction";
+    GET_CREDITS_BEGIN,
+    GET_CREDITS_SUCCESS,
+    GET_CREDITS_FAILURE
+} from "../actions/CreditsAction";
 
 const initialState = {
-    data: [],
+    credits: {
+        cast: []
+    },
     loading: false,
     error: null
 };
 
-const getMoviesReducer = (state = initialState, action) => {
+const creditsReducer = (state = initialState, action) => {
     switch(action.type) {
-        case GET_MOVIES_BEGIN:
+        case GET_CREDITS_BEGIN:
             return {
                 ...state,
                 loading: true,
                 error: null
             };
 
-        case GET_MOVIES_SUCCESS:
+        case GET_CREDITS_SUCCESS:
             return {
                 ...state,
                 loading: false,
-                data: action.data
+                credits: action.credits
             };
 
-        case GET_MOVIES_FAILURE:
+        case GET_CREDITS_FAILURE:
             return {
                 ...state,
                 loading: false,
@@ -38,4 +40,4 @@ const getMoviesReducer = (state = initialState, action) => {
     }
 };
 
-export default getMoviesReducer;
+export default creditsReducer;

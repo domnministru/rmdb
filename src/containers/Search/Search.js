@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Container, Icon} from 'semantic-ui-react';
 import {connect} from 'react-redux';
 
-import {searchAll, setSearchResultsVisibility} from './modules/searchAction';
+import {searchAll, setSearchResultsVisibility} from './modules/SearchAction';
 
 import SearchResult from './SearchResult';
 import Spinner from "../../components/Spinner"

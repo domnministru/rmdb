@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import {connect} from "react-redux";
 
-import {getPopularShows} from "../containers/Tv/modules/getShowsAction";
+import {getPopularShows} from "../containers/Tv/modules/ShowsAction";
 
 import {Dropdown} from "semantic-ui-react";
 

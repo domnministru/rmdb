@@ -1,37 +1,37 @@
 import {
-    GET_POPULAR_SHOWS_BEGIN,
-    GET_POPULAR_SHOWS_SUCCESS,
-    GET_POPULAR_SHOWS_FAILURE
-} from "./getShowsAction";
+    GET_POPULAR_PEOPLE_BEGIN,
+    GET_POPULAR_PEOPLE_SUCCESS,
+    GET_POPULAR_PEOPLE_FAILURE
+} from "./PeopleAction";
 
 const initialState = {
-    shows: [],
+    data: [],
     loading: false,
     error: null
 };
 
-const getShowsReducer = (state = initialState, action) => {
+const peopleReducer = (state = initialState, action) => {
     switch(action.type) {
-        case GET_POPULAR_SHOWS_BEGIN:
+        case GET_POPULAR_PEOPLE_BEGIN:
             return {
                 ...state,
                 loading: true,
                 error: null
             };
 
-        case GET_POPULAR_SHOWS_SUCCESS:
+        case GET_POPULAR_PEOPLE_SUCCESS:
             return {
                 ...state,
                 loading: false,
-                shows: action.shows
+                data: action.data
             };
 
-        case GET_POPULAR_SHOWS_FAILURE:
+        case GET_POPULAR_PEOPLE_FAILURE:
             return {
                 ...state,
                 loading: false,
                 error: action.error,
-                shows: []
+                data: []
             };
 
         default:
@@ -39,4 +39,4 @@ const getShowsReducer = (state = initialState, action) => {
     }
 };
 
-export default getShowsReducer;
+export default peopleReducer;

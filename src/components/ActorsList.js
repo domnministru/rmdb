@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import {connect} from "react-redux";
 
-import {getCredits} from "../actions/getCreditsAction";
+import {getCredits} from "../actions/CreditsAction";
 
 import {Container} from "semantic-ui-react";
 import ActorCard from "./ActorCard";

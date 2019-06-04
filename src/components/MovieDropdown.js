@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import {connect} from "react-redux";
 
-import {getMovies} from "../containers/Movies/modules/getMoviesAction";
+import {getMovies} from "../containers/Movies/modules/MoviesAction";
 
 import {Dropdown} from "semantic-ui-react";
 

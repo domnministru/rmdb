@@ -1,7 +1,7 @@
 import React,{Component} from "react";
 import {connect} from "react-redux";
 
-import {getSpecificMovie} from "./modules/getMovieAction";
+import {getSpecificMovie} from "./modules/MovieAction";
 
 import Cast from "../../components/ActorsList";
 import Body from "../../components/Body";

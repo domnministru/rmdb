@@ -2,7 +2,7 @@ import {
     GET_SPECIFIC_SHOW_BEGIN,
     GET_SPECIFIC_SHOW_SUCCESS,
     GET_SPECIFIC_SHOW_FAILURE,
-} from "./getShowAction";
+} from "./ShowAction";
 
 const initialState = {
     show: {
@@ -21,7 +21,7 @@ const initialState = {
     error: null
 };
 
-const getShowReducer = (state = initialState, action) => {
+const showReducer = (state = initialState, action) => {
     switch(action.type) {
         case GET_SPECIFIC_SHOW_BEGIN:
             return {
@@ -49,4 +49,4 @@ const getShowReducer = (state = initialState, action) => {
     }
 };
 
-export default getShowReducer;
+export default showReducer;

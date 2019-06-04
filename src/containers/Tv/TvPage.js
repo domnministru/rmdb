@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import {connect} from "react-redux";
 
-import {getSpecificShow} from "./modules/getShowAction";
+import {getSpecificShow} from "./modules/ShowAction";
 
 import Presentation from "../../components/Presentation";
 import Cast from "../../components/ActorsList";

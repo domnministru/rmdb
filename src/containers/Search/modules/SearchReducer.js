@@ -2,7 +2,7 @@ import {
     SEARCH_ALL_BEGIN,
     SEARCH_ALL_SUCCESS,
     SEARCH_ALL_FAILURE, SET_SEARCH_RESULTS_VISIBILITY
-} from "./searchAction";
+} from "./SearchAction";
 
 const initialState = {
     suggestions: [],

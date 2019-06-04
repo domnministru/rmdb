@@ -1,35 +1,34 @@
 import {
-    GET_IMAGES_BEGIN,
-    GET_IMAGES_SUCCESS,
-    GET_IMAGES_FAILURE
-} from "../actions/getImagesAction";
+    GET_SPECIFIC_PERSON_BEGIN,
+    GET_SPECIFIC_PERSON_SUCCESS,
+    GET_SPECIFIC_PERSON_FAILURE,
+} from "./PersonAction";
 
 const initialState = {
-    images: {
-        backdrops: [],
-        posters: []
+    person: {
+        also_known_as: [],
     },
     loading: false,
     error: null
 };
 
-const getImagesReducer = (state = initialState, action) => {
+const personReducer = (state = initialState, action) => {
     switch(action.type) {
-        case GET_IMAGES_BEGIN:
+        case GET_SPECIFIC_PERSON_BEGIN:
             return {
                 ...state,
                 loading: true,
                 error: null
             };
 
-        case GET_IMAGES_SUCCESS:
+        case GET_SPECIFIC_PERSON_SUCCESS:
             return {
                 ...state,
                 loading: false,
-                images: action.images
+                person: action.person
             };
 
-        case GET_IMAGES_FAILURE:
+        case GET_SPECIFIC_PERSON_FAILURE:
             return {
                 ...state,
                 loading: false,
@@ -41,4 +40,4 @@ const getImagesReducer = (state = initialState, action) => {
     }
 };
 
-export default getImagesReducer;
+export default personReducer;

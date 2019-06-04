@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import {connect} from 'react-redux';
 import OutsideClickHandler from 'react-outside-click-handler';
 
-import {setSearchResultsVisibility} from './modules/searchAction';
+import {setSearchResultsVisibility} from './modules/SearchAction';
 
 import Suggestion from "./Suggestion";
 import "../../styles/layout/_search.scss"

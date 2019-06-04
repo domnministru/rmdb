@@ -1,32 +1,32 @@
 import {
-    GET_VIDEOS_BEGIN,
-    GET_VIDEOS_SUCCESS,
-    GET_VIDEOS_FAILURE
-} from "../actions/getVideosAction";
+    GET_NOW_PLAYING_BEGIN,
+    GET_NOW_PLAYING_SUCCESS,
+    GET_NOW_PLAYING_FAILURE
+} from "./NowPlayingAction";
 
 const initialState = {
-    videos: [],
+    playing: [],
     loading: false,
     error: null
 };
 
-const getVideosReducer = (state = initialState, action) => {
+const nowPlayingReducer = (state = initialState, action) => {
     switch(action.type) {
-        case GET_VIDEOS_BEGIN:
+        case GET_NOW_PLAYING_BEGIN:
             return {
                 ...state,
                 loading: true,
                 error: null
             };
 
-        case GET_VIDEOS_SUCCESS:
+        case GET_NOW_PLAYING_SUCCESS:
             return {
                 ...state,
                 loading: false,
-                videos: action.videos
+                playing: action.playing
             };
 
-        case GET_VIDEOS_FAILURE:
+        case GET_NOW_PLAYING_FAILURE:
             return {
                 ...state,
                 loading: false,
@@ -38,4 +38,4 @@ const getVideosReducer = (state = initialState, action) => {
     }
 };
 
-export default getVideosReducer;
+export default nowPlayingReducer;

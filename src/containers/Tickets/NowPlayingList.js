@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import {connect} from "react-redux";
 
-import {getNowPlaying} from "./modules/getNowPlayingAction";
+import {getNowPlaying} from "./modules/NowPlayingAction";
 
 import Spinner from "../../components/Spinner";
 import {Container} from "semantic-ui-react";

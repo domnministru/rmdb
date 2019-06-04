@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import {connect} from "react-redux";
 import Proptypes from "prop-types";
 
-import {getMovies} from "./modules/getMoviesAction";
+import {getMovies} from "./modules/MoviesAction";
 
 import ItemCard from "../../components/ItemCard";
 import {Container} from "semantic-ui-react";

@@ -2,7 +2,7 @@ import  React, {Component} from 'react';
 import {Container} from "semantic-ui-react";
 import {connect} from "react-redux";
 
-import {getPopularShows} from "./modules/getShowsAction";
+import {getPopularShows} from "./modules/ShowsAction";
 
 import ItemCard from "../../components/ItemCard";
 import Spinner from "../../components/Spinner";

@@ -2,7 +2,7 @@ import {
     GET_SPECIFIC_MOVIE_BEGIN,
     GET_SPECIFIC_MOVIE_SUCCESS,
     GET_SPECIFIC_MOVIE_FAILURE,
-} from "./getMovieAction";
+} from "./MovieAction";
 
 const initialState = {
     movie: {
@@ -17,7 +17,7 @@ const initialState = {
     error: null
 };
 
-const getMovieReducer = (state = initialState, action) => {
+const movieReducer = (state = initialState, action) => {
     switch(action.type) {
         case GET_SPECIFIC_MOVIE_BEGIN:
             return {
@@ -45,4 +45,4 @@ const getMovieReducer = (state = initialState, action) => {
     }
 };
 
-export default getMovieReducer;
+export default movieReducer;

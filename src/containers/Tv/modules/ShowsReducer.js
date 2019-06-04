@@ -1,38 +1,37 @@
 import {
-    GET_CREDITS_BEGIN,
-    GET_CREDITS_SUCCESS,
-    GET_CREDITS_FAILURE
-} from "../actions/getCreditsAction";
+    GET_POPULAR_SHOWS_BEGIN,
+    GET_POPULAR_SHOWS_SUCCESS,
+    GET_POPULAR_SHOWS_FAILURE
+} from "./ShowsAction";
 
 const initialState = {
-    credits: {
-        cast: []
-    },
+    shows: [],
     loading: false,
     error: null
 };
 
-const getCreditsReducer = (state = initialState, action) => {
+const showsReducer = (state = initialState, action) => {
     switch(action.type) {
-        case GET_CREDITS_BEGIN:
+        case GET_POPULAR_SHOWS_BEGIN:
             return {
                 ...state,
                 loading: true,
                 error: null
             };
 
-        case GET_CREDITS_SUCCESS:
+        case GET_POPULAR_SHOWS_SUCCESS:
             return {
                 ...state,
                 loading: false,
-                credits: action.credits
+                shows: action.shows
             };
 
-        case GET_CREDITS_FAILURE:
+        case GET_POPULAR_SHOWS_FAILURE:
             return {
                 ...state,
                 loading: false,
                 error: action.error,
+                shows: []
             };
 
         default:
@@ -40,4 +39,4 @@ const getCreditsReducer = (state = initialState, action) => {
     }
 };
 
-export default getCreditsReducer;
+export default showsReducer;

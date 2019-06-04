@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import {connect} from "react-redux";
 
-import {getPersonCredits} from "./modules/getPersonCreditsAction";
+import {getPersonCredits} from "./modules/PersonCreditsAction";
 
 import {Container} from "semantic-ui-react";
 import KnownForCard from "./KnownForCard";

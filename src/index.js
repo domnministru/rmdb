@@ -7,34 +7,34 @@ import App from "./containers/App";
 
 import "./App.scss"
 
-import getMoviesReducer from "./containers/Movies/modules/getMoviesReducer";
-import getMovieReducer from "./containers/Movies/modules/getMovieReducer";
-import peopleReducer from "./containers/People/modules/peopleReducer";
-import personReducer from "./containers/People/modules/personReducer";
-import getPersonCreditsReducer from "./containers/People/modules/getPersonCreditsReducer";
-import getShowsReducer from "./containers/Tv/modules/getShowsReducer";
-import getShowReducer from "./containers/Tv/modules/getShowReducer";
-import searchReducer from "./containers/Search/modules/searchReducer";
-import getCreditsReducer from "./reducers/getCreditsReducer";
-import getVideosReducer from "./reducers/getVideosReducer";
-import getImagesReducer from "./reducers/getImagesReducer";
-import getNowPlayingReducer from "./containers/Tickets/modules/getNowPlayingReducer"
+import moviesReducer from "./containers/Movies/modules/MoviesReducer";
+import movieReducer from "./containers/Movies/modules/MovieReducer";
+import peopleReducer from "./containers/People/modules/PeopleReducer";
+import personReducer from "./containers/People/modules/PersonReducer";
+import personCreditsReducer from "./containers/People/modules/PersonCreditsReducer";
+import showsReducer from "./containers/Tv/modules/ShowsReducer";
+import showReducer from "./containers/Tv/modules/ShowReducer";
+import searchReducer from "./containers/Search/modules/SearchReducer";
+import creditsReducer from "./reducers/CreditsReducer";
+import videosReducer from "./reducers/VideosReducer";
+import imagesReducer from "./reducers/ImagesReducer";
+import nowPlayingReducer from "./containers/Tickets/modules/NowPlayingReducer"
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(
     combineReducers({
-        movies: getMoviesReducer,
-        movie: getMovieReducer,
+        movies: moviesReducer,
+        movie: movieReducer,
         people: peopleReducer,
         person: personReducer,
-        personCredits: getPersonCreditsReducer,
-        shows: getShowsReducer,
-        show: getShowReducer,
+        personCredits: personCreditsReducer,
+        shows: showsReducer,
+        show: showReducer,
         suggestions: searchReducer,
-        credits: getCreditsReducer,
-        videos: getVideosReducer,
-        images: getImagesReducer,
-        playing: getNowPlayingReducer,
+        credits: creditsReducer,
+        videos: videosReducer,
+        images: imagesReducer,
+        playing: nowPlayingReducer,
     }),
     composeEnhancers(applyMiddleware(reduxThunk))
 );
