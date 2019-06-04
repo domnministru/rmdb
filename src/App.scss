@@ -9,12 +9,9 @@
     display: flex;
     flex: auto;
     height: auto;
+    margin-top: 120px;
     background-color: white;
-  }
-
-  & footer {
-    display: flex;
-    flex-shrink: 0;
+    padding-bottom: 20px;
   }
 }
 
@@ -153,4 +150,24 @@ p:first-child, p:last-child {
   align-items: center;
   width: 100%;
   height: 50px;
+}
+
+
+// TEXT FORMATTING
+.heading {
+  padding: 15px;
+}
+
+
+// TEXT SIZES
+.text-sm {
+  font-size: 1.25em;
+}
+
+.text-md {
+  font-size: 1.6em;
+}
+
+.text-bg {
+  font-size: 2em;
 }

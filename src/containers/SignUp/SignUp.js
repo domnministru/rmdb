@@ -3,6 +3,7 @@ import React, {Component} from "react";
 import {Button, Container, Input} from "semantic-ui-react";
 import "../../styles/pages/_sign.scss";
 
+
 class SignUp extends Component {
     render() {
         return (
@@ -37,6 +38,7 @@ class SignUp extends Component {
                     <p>Build custom mixed lists (movies and TV)</p>
                     <p>Take part in movie and TV discussions</p>
                     <p>Contribute to, and improve the information in our database</p>
+                    <div className="logo"/>
                 </div>
             </Container>
         )
